@@ -1,23 +1,15 @@
 <?php
 $servername = "localhost";
-$username = "vmadmin";
-$password = "sml12345";
+$username = "username";
+$password = "password";
+$database = "database";
 
-$conn = mysqli_connect($servername, $username, $password);
+try {
+  $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
 
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  echo "Connected successfully";
+} catch(PDOException $e) {
+  echo "Connection failed: " . $e->getMessage();
 }
-echo "Connected successfully";
-
-$sql = "SELECT * FROM northwind.customers;";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-  echo $result->num_rows . " Resultate";
-} else {
-  echo "Keine Resultate vorhanden";
-}
-
-mysqli_close($conn);
 ?>
