@@ -15,7 +15,6 @@ try {
 
 $sql = "SELECT * FROM customers";
 foreach ($conn->query($sql) as $row) {
-   echo $row['company']."<br />";
    echo $row['first_name']."<br />";
    echo $row['last_name']."<br /><br />";
 }
