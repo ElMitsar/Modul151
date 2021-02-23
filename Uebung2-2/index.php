@@ -16,6 +16,16 @@ try {
 $sql = "SELECT * FROM customers";
 foreach ($conn->query($sql) as $row) {
    echo $row['first_name']."<br />";
-   echo $row['last_name']."<br /><br />";
+   echo $row['last_name']."<br />";
+   echo $row['company']."<br />";
+   echo $row['email_address']."<br />";
+   echo $row['job_title']."<br />";
+   echo $row['business_phone']."<br />";
+   echo $row['home_phone']."<br />";
+   echo $row['mobile_phone']."<br />";
+   echo $row['fax_number']."<br />";
+   echo $row['adress']."<br />";
+   echo $row['city']."<br />";
+   echo $row['state_province']."<br /><br />";
 }
 ?>
