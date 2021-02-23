@@ -1,4 +1,5 @@
 <?php
+//SQL Server wird aufgerufen
 $servername = "localhost";
 $username = "vmadmin";
 $password = "sml12345";
@@ -10,7 +11,7 @@ if (!$conn) {
 }
 echo "Connected successfully";
 
-$sql = "SELECT * FROM northwind.customers;";
+$sql = "SELECT contactname FROM northwind.customers WHERE job_title = 'Purchasing Representative';";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -19,5 +20,7 @@ if ($result->num_rows > 0) {
   echo "Keine Resultate vorhanden";
 }
 
+
+//Applikation trennt sich von SQL Server
 mysqli_close($conn);
 ?>
