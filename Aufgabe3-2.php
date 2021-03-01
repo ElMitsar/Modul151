@@ -1,3 +1,4 @@
+<?php
 getConnection();
 
 
@@ -104,4 +105,5 @@ public function __destruct()
 }
 
 }
+?>
 
