@@ -6,5 +6,7 @@ class Order extends Model
     
     public function user() {
         return $this->belongsTo(User::class);
+        $order = Order::find($id);
+        dd($order->user);
     }
 }
